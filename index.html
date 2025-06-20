@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="cursor-overlay"></div>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section class="about-me fade-in-section">
+        <div class="about-content">
+            <div class="text-area">
+                <h2>Hi, I'm Jakub Duda</h2>
+                <p>
+                    I am a dedicated full-stack developer with a strong passion for building efficient and scalable web
+                    applications. I enjoy working on both the frontend and backend, constantly learning new technologies
+                    to create seamless user experiences and robust server-side solutions. My enthusiasm for coding
+                    drives me to deliver high-quality projects and continuously improve my skills.
+                </p>
+                <div class="actions">
+                    <a href="Cv.pdf" download class="btn-cv">Pobierz CV</a>
+                    <div class="social-icons">
+                        <a href="https://github.com/twojprofil" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/twojprofil" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:twojemail@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-area">
+                <img src="zdj.jpg" alt="My photo" />
+            </div>
+        </div>
+    </section>
+
+
+    <div class="skills-section">
+        <h3>What I love</h3>
+        <p>TypeScript, JavaScript, React, Next.js, React Native (Expo), NestJS, Express.js, Node.js, PostgreSQL,
+            Tailwind CSS, CSS & pre-processors, Unit Testing (Jest), Docker</p>
+
+        <h3>What I know well, but don't necessarily love</h3>
+        <p>MySQL</p>
+
+        <h3>What I'm trying-out right now</h3>
+        <p>Golang, PixiJS, Kubernetes, RabbitMQ</p>
+
+        <h3>What I have at least a little knowledge in</h3>
+        <p>C++, C#, PHP, Python, MongoDB, Redis</p>
+
+        <h3>Not strictly dev, but still handy</h3>
+        <p>Web Hosting (VPS deployment, Nginx, PM2), DNS & SSL management (Cloudflare), Digital Marketing (Meta,
+            Google), SEO, Analytics Tools (GA4, Facebook Pixel, Hotjar), E-Commerce, Git, Project Management,
+            Performance Optimization, clear and concise communication</p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
