@@ -7,9 +7,17 @@
     <title>Portfolio Navbar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
+    <div class="side-nav">
+        <a href="#about" class="nav-dot active" aria-label="About"></a>
+        <a href="#experience" class="nav-dot" aria-label="Experience"></a>
+        <a href="#projects" class="nav-dot" aria-label="Projects"></a>
+        <a href="#contact" class="nav-dot" aria-label="Contact"></a>
+    </div>
     <div class="cursor-overlay"></div>
     <nav class="navbar">
         <ul class="nav-links">
@@ -25,7 +33,7 @@
         </div>
     </nav>
 
-    <section class="about-me fade-in-section">
+    <section class="about-me fade-in-section" id="about">
         <div class="about-content">
             <div class="text-area">
                 <h2>Hi, I'm Jakub Duda</h2>
@@ -59,25 +67,66 @@
 
     <div class="skills-section">
         <h3>What I love</h3>
-        <p>TypeScript, JavaScript, React, Next.js, React Native (Expo), NestJS, Express.js, Node.js, PostgreSQL,
-            Tailwind CSS, CSS & pre-processors, Unit Testing (Jest), Docker</p>
+        <p>TypeScript, JavaScript, React, Next.js,Express.js, Node.js,
+            Tailwind CSS, CSS & pre-processors, Docker,MongoDB</p>
 
         <h3>What I know well, but don't necessarily love</h3>
-        <p>MySQL</p>
+        <p>MySQL, PHP</p>
 
-        <h3>What I'm trying-out right now</h3>
-        <p>Golang, PixiJS, Kubernetes, RabbitMQ</p>
 
         <h3>What I have at least a little knowledge in</h3>
-        <p>C++, C#, PHP, Python, MongoDB, Redis</p>
+        <p>C++, PHP, Python</p>
 
-        <h3>Not strictly dev, but still handy</h3>
-        <p>Web Hosting (VPS deployment, Nginx, PM2), DNS & SSL management (Cloudflare), Digital Marketing (Meta,
-            Google), SEO, Analytics Tools (GA4, Facebook Pixel, Hotjar), E-Commerce, Git, Project Management,
-            Performance Optimization, clear and concise communication</p>
+        <h3>Other</h3>
+        <p>GIT, Parcel, Webpack, Ubuntu, Windows Server</p>
     </div>
 
-
+    <section class="edu-exp-section dark-bg" id="experience">
+        <div class="header">
+            <div class="toggle-dots">
+                <span class="dot active" data-target="education" aria-label="Nauka"></span>
+                <span class="dot" data-target="experience" aria-label="Doświadczenie"></span>
+            </div>
+            <div class="toggle-label">
+                <span class="label active" id="label-education">Education</span>
+                <span class="label" id="label-experience">Experience</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="education active">
+                <div class="item">
+                    <h4><i class="fas fa-university"></i> Warsaw University of Technology</h4>
+                    <p>Software Engineering, 2018-2022 — Master's studies in IT, specializing in frontend and backend
+                        development.</p>
+                </div>
+                <div class="item">
+                    <h4><i class="fas fa-laptop-code"></i> React Course</h4>
+                    <p>Udemy, 2023 — Advanced React techniques, state management, and application performance
+                        optimization.</p>
+                </div>
+                <div class="item">
+                    <h4><i class="fas fa-code"></i> TypeScript Course</h4>
+                    <p>Codecademy, 2022 — Static typing and building scalable applications.</p>
+                </div>
+            </div>
+            <div class="experience">
+                <div class="item">
+                    <h4><i class="fas fa-briefcase"></i> Frontend Developer</h4>
+                    <p>XYZ Company, 2022-present — Creating and optimizing UI in React, working with REST API and
+                        GraphQL.</p>
+                </div>
+                <div class="item">
+                    <h4><i class="fas fa-briefcase"></i> Fullstack Intern</h4>
+                    <p>ABC Software, Summer 2021 — Participated in a Node.js + React project, testing and deployments.
+                    </p>
+                </div>
+                <div class="item">
+                    <h4><i class="fas fa-briefcase"></i> Freelancer</h4>
+                    <p>2020-2022 — Projects for clients, creating landing pages and e-commerce websites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 
