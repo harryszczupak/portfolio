@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			section.scrollIntoView({
 				behavior: 'smooth',
-				block: 'start',
+				block: 'center',
 			});
 
 			// Po 700ms (czas scrolla) znów zezwól na aktualizację aktywnej kropki na scroll
@@ -143,6 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				isClickScrolling = false;
 				updateActiveDot(); // wymuś update po scrollu
 			}, 700);
+		});
+	});
+	document.querySelectorAll('.nav-links a').forEach((link) => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			const id = link.getAttribute('href').substring(1);
+			const target = document.getElementById(id);
+
+			if (target) {
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: id === 'experience' ? 'end' : 'center',
+				});
+			}
 		});
 	});
 });
