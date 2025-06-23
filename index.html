@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
@@ -75,7 +75,7 @@
 
 
         <h3>What I have at least a little knowledge in</h3>
-        <p>C++, PHP, Python</p>
+        <p>C++, Python</p>
 
         <h3>Other</h3>
         <p>GIT, Parcel, Webpack, Ubuntu, Windows Server</p>
@@ -135,7 +135,9 @@
 
                     <h3>Message app</h3>
                     <p>Full-stack app based on Next.js Node.js Tailwind and MongoDB</p>
-
+                    <a href="#" target="_blank" class="btn-visit" aria-label="Visit website">
+                        <i class="fas fa-globe"></i> Visit site
+                    </a>
                 </div>
             </div>
             <div class="project-item">
@@ -143,7 +145,10 @@
                 <div class="project-text">
                     <h3>Booking service</h3>
                     <p>An booking-service website built using Node.js MongoDB and Stripe.</p>
-
+                    <a href="https://booking-service-ifd3.onrender.com" target="_blank" class="btn-visit"
+                        aria-label="Visit website">
+                        <i class="fas fa-globe"></i> Visit site
+                    </a>
                 </div>
             </div>
             <div class="project-item">
@@ -151,7 +156,70 @@
                 <div class="project-text">
                     <h3>Infinite apparel shop</h3>
                     <p>A e-commerce shop build with Node.js based on MVC</p>
+                    <a href="https://twojastrona.com" target="_blank" class="btn-visit" aria-label="Visit website">
+                        <i class="fas fa-globe"></i> Visit site
+                    </a>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+
+            <div class="testimonial-person">
+                <img src="tworek.jpg" alt="Person" class="testimonial-avatar" />
+                <div class="testimonial-divider"></div>
+                <div class="testimonial-info">
+                    <h4>Wiktor Tworek</h4>
+                    <p class="testimonial-role">CEO of Infinite Apparel</p>
+                </div>
+            </div>
+
+            <div class="testimonial-content">
+                <p class="testimonial-text">
+                    Working with Jakub was a fantastic experience. His full-stack development
+                    skills are top-notch, and he consistently delivered high-quality work
+                    on time. Highly recommended for any web development project.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>Interested in working together or just want to say hi? Feel free to send me a message!</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>gpro6833@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>https://www.linkedin.com/in/jakub-duda-9b272b33a/</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <span>https://github.com/harryszczupak</span>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="mailto:twojemail@example.com" method="POST" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
