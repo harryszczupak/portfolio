@@ -723,7 +723,7 @@ section {
 }
 
 .footer-icons a:hover {
-	color: #00bcd4; /* akcentowy kolor np. niebiesko-zielony pasujący do Tailwind */
+	color: #1abc9c; /* akcentowy kolor np. niebiesko-zielony pasujący do Tailwind */
 }
 .testimonial-section {
 	display: flex;
@@ -881,18 +881,19 @@ section {
 
 .submit-btn {
 	background-color: #16a085;
-	color: #000;
+	color: white;
 	padding: 0.8rem 1rem;
 	font-weight: bold;
 	font-size: 1rem;
-	border: none;
+	border: 1px solid var(--green-dark);
 	border-radius: 5px;
 	cursor: pointer;
-	transition: background 0.3s ease;
+	transition: 0.3s ease-in-out;
 }
 
 .submit-btn:hover {
-	background-color: #ffda75;
+	background-color: var(--green-dark); /* ciemniejszy niebieski na hover */
+	border: 1px solid #16a085;
 }
 
 @media (max-width: 768px) {
