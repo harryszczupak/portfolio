@@ -607,7 +607,42 @@ section {
 	transition: 0.2s ease-in-out;
 	will-change: transform;
 }
+.tech-tags {
+	margin-bottom: 20px;
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
 
+.tech-tag {
+	background-color: #e0e0e0; /* szare tło */
+	border-radius: 20px;
+
+	padding: 5px 12px;
+	display: flex;
+	align-items: center;
+	font-size: 0.9rem;
+	color: var(--green-dark); /* ciemna zieleń na tekst */
+	font-weight: 500;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+}
+
+.tech-tag i {
+	margin-right: 6px;
+	font-size: 1.1rem;
+	color: unset;
+}
+
+/* Hover efekt */
+.tech-tag:hover {
+	background-color: var(--green-dark); /* ciemna zieleń tło na hover */
+	color: var(--text-light); /* jasny tekst na hover */
+}
+
+.tech-tag:hover i {
+	color: var(--text-light); /* ikona też jaśniejsza */
+}
 .project-text {
 	flex-grow: 1;
 	display: flex;
@@ -875,19 +910,23 @@ section {
 	align-items: center;
 	gap: 6px;
 	padding: 6px 12px;
-	background-color: #f0f0f0;
-	color: #333;
+	background-color: #16a085;
+	color: white; /* ciemny niebieski tekst */
+	border: 1px solid var(--green-dark); /* delikatny niebieski border */
 	border-radius: 6px;
 	text-decoration: none;
 	font-weight: 600;
 	font-size: 0.9rem;
-	transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease, border-color 0.3s ease;
+	cursor: pointer;
 }
 
 .btn-visit:hover {
-	background-color: #ddd;
+	background-color: var(--green-dark); /* ciemniejszy niebieski na hover */
+	border-color: #16a085; /* mocniejszy niebieski border na hover */
+	color: white; /* ciemniejszy tekst na hover */
 }
-
 .btn-visit i {
 	font-size: 1.1rem;
+	color: white;
 }
