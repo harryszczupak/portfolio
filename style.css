@@ -930,3 +930,69 @@ section {
 	font-size: 1.1rem;
 	color: white;
 }
+.skills-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 50px;
+	justify-items: center;
+	max-width: 1200px;
+	margin: 10rem auto;
+}
+
+/* === Pojedyncze koło === */
+.skill {
+	position: relative;
+	width: 260px;
+	height: 260px;
+}
+
+/* Obrót koła żeby zaczynało od góry */
+.circle {
+	transform: rotate(-90deg);
+}
+
+/* Wspólne ustawienia dla obu okręgów */
+circle {
+	fill: none;
+	stroke-width: 18;
+	cx: 130;
+	cy: 130;
+	r: 110;
+}
+
+/* Tło okręgu – przezroczyste, żeby nie zasłaniało tła */
+.bg {
+	stroke: transparent;
+}
+
+/* Zielony pasek postępu */
+.progress {
+	stroke: #1abc9c; /* zielony */
+	stroke-linecap: round;
+	stroke-dasharray: 691; /* 2 * PI * 110 */
+	stroke-dashoffset: 691;
+	transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Wewnętrzna część z tekstem */
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+/* Procent – duży i jasny */
+.percentage {
+	font-size: 36px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* Nazwa technologii – nieco mniejsza, ale jasna */
+.tech-name {
+	font-size: 18px;
+	margin-top: 6px;
+	color: #d1d5db;
+}

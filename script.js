@@ -161,3 +161,34 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+document.querySelectorAll('.skill').forEach((skill) => {
+	const percentage = parseInt(skill.getAttribute('data-percentage'), 10);
+	const progressCircle = skill.querySelector('.progress');
+	const percentageText = skill.querySelector('.percentage');
+
+	const radius = 110;
+	const circumference = 2 * Math.PI * radius;
+
+	progressCircle.style.strokeDasharray = circumference;
+	progressCircle.style.strokeDashoffset = circumference;
+
+	let current = 0;
+	const duration = 1500;
+	const steps = 120;
+	const increment = percentage / steps;
+
+	const animate = () => {
+		current += increment;
+		if (current > percentage) current = percentage;
+
+		const offset = circumference * (1 - current / 100);
+		progressCircle.style.strokeDashoffset = offset;
+		percentageText.textContent = Math.round(current) + '%';
+
+		if (current < percentage) {
+			requestAnimationFrame(animate);
+		}
+	};
+
+	requestAnimationFrame(animate);
+});
