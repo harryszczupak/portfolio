@@ -161,34 +161,52 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+const observer = new IntersectionObserver(
+	(entries, observer) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const skill = entry.target;
+				const percentage = parseInt(skill.getAttribute('data-percentage'), 10);
+				const progressCircle = skill.querySelector('.progress');
+				const percentageText = skill.querySelector('.percentage');
+
+				const radius = 110;
+				const circumference = 2 * Math.PI * radius;
+
+				progressCircle.style.strokeDasharray = circumference;
+				progressCircle.style.strokeDashoffset = circumference;
+
+				let current = 0;
+				const duration = 1500;
+				const steps = 120;
+				const increment = percentage / steps;
+
+				const animate = () => {
+					current += increment;
+					if (current > percentage) current = percentage;
+
+					const offset = circumference * (1 - current / 100);
+					progressCircle.style.strokeDashoffset = offset;
+					percentageText.textContent = Math.round(current) + '%';
+
+					if (current < percentage) {
+						requestAnimationFrame(animate);
+					}
+				};
+
+				requestAnimationFrame(animate);
+
+				// Odłącz obserwator po uruchomieniu animacji, żeby nie odpalała się ponownie
+				observer.unobserve(skill);
+			}
+		});
+	},
+	{
+		threshold: 0.3, // oznacza, że 30% elementu musi być w widoku, żeby uruchomić
+	}
+);
+
+// Obserwujemy wszystkie elementy .skill
 document.querySelectorAll('.skill').forEach((skill) => {
-	const percentage = parseInt(skill.getAttribute('data-percentage'), 10);
-	const progressCircle = skill.querySelector('.progress');
-	const percentageText = skill.querySelector('.percentage');
-
-	const radius = 110;
-	const circumference = 2 * Math.PI * radius;
-
-	progressCircle.style.strokeDasharray = circumference;
-	progressCircle.style.strokeDashoffset = circumference;
-
-	let current = 0;
-	const duration = 1500;
-	const steps = 120;
-	const increment = percentage / steps;
-
-	const animate = () => {
-		current += increment;
-		if (current > percentage) current = percentage;
-
-		const offset = circumference * (1 - current / 100);
-		progressCircle.style.strokeDashoffset = offset;
-		percentageText.textContent = Math.round(current) + '%';
-
-		if (current < percentage) {
-			requestAnimationFrame(animate);
-		}
-	};
-
-	requestAnimationFrame(animate);
+	observer.observe(skill);
 });
