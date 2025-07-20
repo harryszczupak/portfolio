@@ -10,8 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" href="/favicon.png" type="image/png">
+
+
+
     <meta name="description"
         content="I'm Jakub, a 20-year-old Full-Stack Developer and IT student at the Polytechnic. I specialize in JavaScript, TypeScript, React, Node.js, MongoDB, and modern web tools like Stripe, Redux, Tailwind CSS, and more. Freelance available.">
+
 
 </head>
 
@@ -48,7 +52,7 @@
                     drives me to deliver high-quality projects and continuously improve my skills.
                 </p>
                 <div class="actions">
-                    <a href="Cv.pdf" download class="btn-cv">Pobierz CV</a>
+                    <a href="Cv.pdf" download class="btn-cv">Resume</a>
                     <div class="social-icons">
                         <a href="https://github.com/harryszczupak" target="_blank" aria-label="GitHub">
                             <i class="fab fa-github"></i>
@@ -167,6 +171,59 @@
             </div>
         </div>
     </section>
+
+    <section style="
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   background:url('backdrop.png') no-repeat center center ;
+  padding: 20px;
+  background-size: 80% auto;
+  color: #a7f0e9; /* jasny turkusowy tekst */
+  text-align: center;
+">
+        <h1 style="
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: white;
+    text-shadow: 0 0 10px #16a085;
+  ">
+            Schedule a Consultation
+        </h1>
+
+        <button id="openPopupBtn" style="
+      background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 25px 60px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(26, 188, 156, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    ">
+            Set Up a Meeting
+        </button>
+    </section>
+
+
+    <div class="overlay" id="popupOverlay">
+        <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+            <span class="popup-close" id="closePopupBtn" aria-label="Zamknij popup">&times;</span>
+
+            <div id="loadingDots" class="loading-dots">
+                <span></span><span></span><span></span>
+            </div>
+            <iframe src="https://cal.com/szczupak/30min" id="calIframe"
+                style="flex-grow: 1; border: none; border-radius: 0 0 8px 8px;" width="800px" height="400px"
+                title="Rezerwacja spotkania" allow="clipboard-write"></iframe>
+        </div>
+    </div>
     <section class="projects-section" id='projects'>
         <h1 class="section-title">My Projects</h1>
         <div class="projects-container">
@@ -262,6 +319,9 @@
             </div>
         </div>
     </section>
+
+
+
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <div class="contact-header">
@@ -312,6 +372,45 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        const openBtn = document.getElementById('openPopupBtn');
+        const overlayPop = document.getElementById('popupOverlay');
+        const closeBtn = document.getElementById('closePopupBtn');
+        const loadingDots = document.getElementById('loadingDots');
+        const calIframe = document.getElementById('calIframe');
+
+        openBtn.addEventListener('click', () => {
+            overlayPop.style.display = 'flex';
+
+            // Pokaż animację kropek, ukryj iframe
+            loadingDots.style.display = 'flex';
+            calIframe.style.display = 'none';
+
+            // Po 3 sekundach pokaż iframe i ukryj animację
+            setTimeout(() => {
+                loadingDots.style.display = 'none';
+                calIframe.style.display = 'flex';
+            }, 500);
+        });
+
+        closeBtn.addEventListener('click', () => {
+            overlayPop.style.display = 'none';
+            // Resetujemy iframe i animację, żeby przy następnym otwarciu działało dobrze
+            calIframe.style.display = 'none';
+            loadingDots.style.display = 'flex';
+        });
+
+        // Kliknięcie w overlay poza popup zamyka popup
+        overlayPop.addEventListener('click', e => {
+            if (e.target === overlayPop) {
+                overlayPop.style.display = 'none';
+                calIframe.style.display = 'none';
+                loadingDots.style.display = 'flex';
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>
